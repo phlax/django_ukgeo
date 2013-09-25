@@ -17,9 +17,6 @@ setup(
     long_description=open('README.md', 'r').read(),
     packages=[
         'django_ukgeo'],
-    package_data={
-        'django_ukgeo': [
-            'static/django_ukgeo/css/*']},
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
