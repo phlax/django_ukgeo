@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 try:
     from setuptools import setup
 except ImportError:
     from ez_setup import use_setuptools
     use_setuptools()
     from setuptools import setup
-
 
 setup(
     name='django-ukgeo',
@@ -29,5 +29,4 @@ setup(
         'Programming Language :: Python :: 3',
         'Topic :: Utilities',
     ],
-    zip_safe=False,
-)
+    zip_safe=False)

@@ -32,6 +32,7 @@ def geocode(keyword, cache=True, model=None, exactly_one=True):
         return ((c[0].label, c[0].location) for c in cached)
 
     g = geocoders.GoogleV3(domain='maps.google.co.uk')
+
     try:
         search_keyword = keyword
         if not keyword.endswith(' UK'):
