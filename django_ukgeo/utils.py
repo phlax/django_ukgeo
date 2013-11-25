@@ -1,7 +1,7 @@
 import logging
 
 from geopy import geocoders
-from geopy.geocoders.base import GeocoderResultError
+from geopy.exc import GeocoderQueryError
 
 from haystack.query import SearchQuerySet
 
@@ -38,7 +38,7 @@ def geocode(keyword, cache=True, model=None, exactly_one=True):
         if not keyword.endswith(' UK'):
             search_keyword = "%s UK" % keyword
         results = g.geocode(search_keyword, exactly_one=False)
-    except GeocoderResultError:
+    except GeocoderQueryError:
         log.error('Geocoding failed (Geocoder result error): %s' % keyword)
     except ValueError:
         log.error('Geocoding failed (Value error): %s' % keyword)
